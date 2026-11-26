@@ -1,0 +1,251 @@
+:root {
+  color-scheme: light;
+  --paper: #f4f0e5;
+  --ink: #1b211e;
+  --muted: #6b716b;
+  --rule: #c9c1b1;
+  --accent: #a33a26;
+  --mono: "Cascadia Code", Consolas, "Liberation Mono", monospace;
+  --serif: Georgia, "Songti SC", "SimSun", "Times New Roman", serif;
+  --sans: "Segoe UI", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  color: var(--paper);
+  background: var(--accent);
+}
+
+a {
+  color: var(--ink);
+}
+
+/* ---------- home: only functional entries ---------- */
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: min(720px, calc(100% - 48px));
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+.home h1 {
+  margin: 0 0 30px;
+  font-family: var(--serif);
+  font-size: clamp(42px, 7vw, 66px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding-top: 22px;
+  border-top: 2px solid var(--ink);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 58px;
+  padding: 0 15px;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: color 0.12s ease, background 0.12s ease, border-color 0.12s ease;
+}
+
+.action::after {
+  content: "→";
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.action:hover {
+  color: var(--paper);
+  background: var(--ink);
+  border-color: var(--ink);
+  text-decoration: none;
+}
+
+.action:hover::after {
+  color: var(--paper);
+}
+
+/* ---------- form ---------- */
+
+.simple-head {
+  border-top: 4px solid var(--ink);
+  border-bottom: 1px solid var(--rule);
+}
+
+.simple-head-inner {
+  width: min(720px, calc(100% - 48px));
+  margin: 0 auto;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  min-height: 64px;
+  gap: 20px;
+}
+
+.simple-head a {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.simple-head span {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.form-page {
+  width: min(560px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 8vh 0 48px;
+}
+
+.form-page h1 {
+  margin: 0 0 24px;
+  font-family: var(--serif);
+  font-size: clamp(34px, 5vw, 48px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+}
+
+.form-card {
+  border-top: 2px solid var(--ink);
+  padding-top: 22px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--ink);
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  border-radius: 0;
+  outline: none;
+  color: var(--ink);
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+}
+
+.field textarea {
+  min-height: 108px;
+  padding: 9px 0;
+  border: 1px solid var(--rule);
+  background: transparent;
+  resize: vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+}
+
+.field .hint {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 46px;
+  margin-top: 6px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  color: var(--paper);
+  background: var(--ink);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .home {
+    padding-top: 8vh;
+  }
+
+  .actions {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .simple-head-inner,
+  .home,
+  .form-page {
+    width: min(100% - 32px, 720px);
+  }
+}

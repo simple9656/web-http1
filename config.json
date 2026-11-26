@@ -1,0 +1,40 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 8080,
+    "backlog": 128,
+    "max_connections": 256,
+    "keep_alive_timeout": 10,
+    "max_requests_per_connection": 1000,
+    "max_header_bytes": 32768,
+    "max_body_bytes": 1048576,
+    "max_headers": 100,
+    "access_log": "logs/access.log",
+    "access_log_console": true,
+    "server_name": "SimpleHTTP/1.0",
+    "test_mode": false
+  },
+  "default_host": "localhost",
+  "hosts": {
+    "localhost": {
+      "root": "sites/default",
+      "denied_prefixes": ["/private"]
+    },
+    "127.0.0.1": {
+      "root": "sites/default",
+      "denied_prefixes": ["/private"]
+    },
+    "site-a.test": {
+      "root": "sites/site-a.test"
+    },
+    "site-a.localhost": {
+      "root": "sites/site-a.test"
+    },
+    "site-b.test": {
+      "root": "sites/site-b.test"
+    },
+    "site-b.localhost": {
+      "root": "sites/site-b.test"
+    }
+  }
+}

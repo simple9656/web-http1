@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>POST 表单 · SimpleHTTP</title>
+  <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="simple-head">
+    <div class="simple-head-inner">
+      <a href="/">SimpleHTTP</a>
+      <span>POST /submit</span>
+    </div>
+  </header>
+
+  <main class="form-page">
+    <h1>POST 表单</h1>
+    <form class="form-card" action="/submit" method="post" accept-charset="UTF-8">
+      <div class="form-row">
+        <div class="field">
+          <label for="name">姓名</label>
+          <input id="name" name="name" type="text" required maxlength="80" autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="email">邮箱</label>
+          <input id="email" name="email" type="email" maxlength="120" autocomplete="email">
+        </div>
+      </div>
+      <div class="field">
+        <label for="topic">主题</label>
+        <select id="topic" name="topic">
+          <option value="课程实验">课程实验</option>
+          <option value="协议问题">HTTP 协议问题</option>
+          <option value="性能测试">性能测试</option>
+          <option value="一般咨询">一般咨询</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message">留言</label>
+        <textarea id="message" name="message" required maxlength="2000"></textarea>
+      </div>
+      <button class="btn" type="submit">提交</button>
+    </form>
+  </main>
+</body>
+</html>

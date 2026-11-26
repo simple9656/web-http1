@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Alpha · site-a.test</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%231f5b56'/%3E%3C/svg%3E">
+  <style>
+    :root { color-scheme: light; --paper:#f4f0e5; --ink:#1b211e; --muted:#6b716b; --rule:#c9c1b1; --accent:#1f5b56; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif; }
+    header { border-top:4px solid var(--accent); border-bottom:1px solid var(--rule); }
+    .head { width:min(680px,calc(100% - 48px)); margin:0 auto; min-height:64px; display:flex; align-items:baseline; justify-content:space-between; gap:20px; }
+    .head a { color:var(--ink); font-family:Georgia,"SimSun",serif; font-size:22px; font-weight:700; text-decoration:none; }
+    .head span { color:var(--muted); font-family:Consolas,monospace; font-size:10px; letter-spacing:.06em; }
+    main { width:min(680px,calc(100% - 48px)); margin:0 auto; padding:14vh 0 48px; }
+    h1 { margin:0 0 28px; font-family:Georgia,"SimSun",serif; font-size:clamp(48px,8vw,76px); font-weight:500; line-height:1; letter-spacing:-.055em; }
+    nav { display:flex; flex-wrap:wrap; gap:8px; padding-top:22px; border-top:2px solid var(--ink); }
+    nav a { display:flex; align-items:center; justify-content:space-between; min-height:52px; min-width:180px; padding:0 15px; border:1px solid var(--rule); color:var(--ink); font-family:Consolas,monospace; font-size:12px; text-decoration:none; }
+    nav a::after { content:"→"; color:var(--accent); }
+    nav a:hover { color:var(--paper); background:var(--ink); border-color:var(--ink); }
+    nav a:hover::after { color:var(--paper); }
+    @media (max-width:600px) { .head span { display:none; } nav { display:grid; } nav a { min-width:0; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="head">
+      <a href="http://localhost:8080/">SimpleHTTP</a>
+      <span>site-a.test</span>
+    </div>
+  </header>
+  <main>
+    <h1>Alpha</h1>
+    <nav>
+      <a href="/api/echo">请求回显</a>
+      <a href="http://localhost:8080/">默认站点</a>
+    </nav>
+  </main>
+</body>
+</html>
